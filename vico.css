@@ -1,0 +1,309 @@
+#vico_cover {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	background: rgba(0,0,0,0.5);
+	top: 0;
+	left: 0;
+}
+
+.vico_body_fixed {
+	overflow: hidden;
+}
+
+#vico_alert_window {
+	position: absolute;
+	width: 400px;
+	height: 200px;
+	top: 50%;
+	left: 50%;
+	background: #fff;
+	margin-top: -100px;
+	margin-left: -200px;
+}
+
+#vico_alert_bar {
+	width: 100%;
+	height: 30px;
+	background: #BB1C1C;
+	line-height: 30px;
+	vertical-align: middle;
+	text-align: center;
+	color: #CEAE07;
+}
+
+#vico_alert_bar span {
+	float: right;
+	display: inline-block;
+	cursor: pointer;
+	margin-right: 10px;
+	color: #CEAE07;
+	font-weight: bolder;
+}
+
+#vico_alert_content {
+	width: 100%;
+	line-height: 120px;
+	height: 120px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+#vico_alert_confirm {
+	width: 100%;
+	height: 50px;
+}
+
+#vico_alert_confirm_btn {
+	float: right;
+	height: 30px;
+	line-height: 30px;
+	width: 60px;
+	background: #BB1C1C;
+	color: #CEAE07;
+	text-align: center;
+	vertical-align: middle;
+	margin-top: 10px;
+	margin-right: 10px;
+	position: relative;
+	cursor: pointer;
+}
+
+#vico_alert_confirm_btn:active {
+	top: 1px;
+}
+
+.vico_hidden {
+	display: none !important;
+}
+
+.vico_autocomplete_container {
+	width: 400px;
+	height: 50px;
+	border: 1px solid #ddd;
+	position: relative;
+	background: #fff;
+}
+
+.vico_autocomplete_input {
+	width: 90%;
+	height: 100%;
+	border: 0;
+	font-size: 30px;
+	padding-left: 10px;
+	border-radius: 10px;
+}
+
+.vico_autocomplete_input:focus {
+	outline: 0;
+	border: 0;
+}
+
+.vico_autocomplete_clear {
+	float: right;
+	width: 10%;
+	font-size: 30px;
+	display: inline-block;
+	line-height: 50px;
+	vertical-align: middle;
+	text-align: center;
+	color: #ddd;
+	font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+	cursor: pointer;
+	opacity: 0;
+}
+
+.vico_dropdown {
+	position: absolute;
+	top: 51px;
+	width: 99%;
+	border: 1px solid #ddd;
+	border-top: 0px solid #ddd;
+	max-height: 200px;
+	overflow-y: scroll;
+	padding-top: 10px;
+	z-index: 1000;
+	background: #fff;
+}
+
+.vico_dropdown_item {
+	padding-left: 10px;
+	font-size: 20px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	cursor: pointer;
+}
+
+/*.vico_dropdown_item:hover {
+	background: #BB1C1C;
+	color: #CEAE07;
+	font-weight: bolder;
+}*/
+
+.vico_dropdown_item_highlight {
+	background: #BB1C1C;
+	color: #CEAE07;
+	font-weight: bolder;
+}
+
+.vico_select_btn {
+	position: absolute;
+	right: -50px;
+	height: 50px;
+	width: 50px;
+	top: 0;
+	text-align: center;
+	cursor: pointer;
+}
+
+.vico_select_btn span {
+	display: inline-block;
+	border-top: 20px dashed #ddd;
+	border-right: 20px solid transparent;
+	border-left: 20px solid transparent;
+	margin-top: 15px;
+}
+
+.vico_select_btn:active {
+	top: 2px;
+}
+
+.vico_b {
+	font-weight: bolder;
+}
+
+#vico_icon_picker {
+	width: 600px;
+	height: 600px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -300px;
+	margin-top: -300px;
+	background: #fff;
+}	
+
+#vico_picker_bar {
+	width: 100%;
+	height: 5%;
+	background: #BB1C1C;
+	color: #CEAE07;
+}
+
+#vico_picker_bar span {
+	float: right;
+	display: inline-block;
+	cursor: pointer;
+	margin-right: 10px;
+	margin-top: 5px;
+	color: #CEAE07;
+	font-weight: bolder;
+	line-height: 100%;
+	vertical-align: center;
+	font-size: 20px;
+	font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+}
+
+#vico_picker_toolbar {
+	width: 100%;
+	height: 10%;
+}
+
+#vico_picker_content {
+	width: 100%;
+	height: 85%;
+}
+
+#vico_picker_input {
+	height: 50%;
+	margin-top: 10px;
+	margin-left: 10px;
+	border: 1px solid #BB1C1C;
+	padding-left: 5px;
+}
+
+#vico_picker_input:focus {
+	outline:  1px solid #CEAE07;
+}
+
+#vico_picker_btn {
+	background: #BB1C1C;
+	color: #CEAE07;
+	border: 1px solid #DE4141;
+	padding: 5px;
+	margin-left: 10px;
+	outline: 1px solid #DE4141;
+	position: relative;
+	float: right;
+	margin-top: 10px;
+	margin-right: 10px;
+}
+
+#vico_picker_btn:active {
+	top: 1px;
+}
+
+#vico_picker_next, #vico_picker_prev {
+	float: right;
+	color: #BB1C1C;
+	display: block;
+	margin-top: 15px;
+	margin-right: 10px;
+	cursor: pointer;
+	position: relative;
+}
+
+.vico_picker_disabled {
+	color: #999 !important;
+	cursor: default !important;
+}
+
+#vico_picker_next:not(.vico_picker_disabled):active, #vico_picker_prev:not(.vico_picker_disabled):active {
+	top: 2;
+}
+
+.vico_icon_item {
+	display: inline-block;
+	width: 12.5%;
+	height: 12.5%;
+	cursor: pointer;
+}
+
+.vico_icon_item:hover {
+	background: #ddd;
+}
+
+.vico_icon_entity {
+	display: block;
+	width: 100%;
+	height: 60%;
+	vertical-align: middle;
+	text-align: center;
+	overflow: hidden;
+}
+.vico_icon_title {
+	display: block;
+	width: 100%;
+	height: 40%;
+	text-align: center;
+	font-size: 5px;
+}
+
+.vico_icon_entity i {
+	display: block;
+	position: relative;
+	top: 60%;
+} 
+
+.vico_item_chosen {
+	background: #ddd;
+}
+
+.vico_item_chosen_front {
+	outline:1px solid #999;
+	outline-offset:-1px;
+}
+
+
+
