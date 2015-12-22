@@ -177,7 +177,7 @@ vico.prototype.autocomplete = function (obj) {
 	
 	// the function is to update filter ret
 	function updateFilterRet(query) {
-		var i, regexStr;
+		var i, regexStr, regexObj;
 		if (sourceType === '[object Array]' || sourceType === '[object String]') {
 			regexStr = '.*';
 			// turn input into regex
@@ -193,6 +193,12 @@ vico.prototype.autocomplete = function (obj) {
 				regexStr += '.*';
 			}
 
+			if (obj['sensitive'] === false) {
+				regexObj = new RegExp(regexStr, 'i');
+			} else {
+				regexObj = new RegExp(regexStr);
+			}
+
 			// filter result
 			instance.filterRet = [];
 			obj['source'].forEach(function (v) {
@@ -200,13 +206,17 @@ vico.prototype.autocomplete = function (obj) {
 				q = query.split('');
 				str = [];
 
-				if ((new RegExp(regexStr)).test(v)) {
+				if (regexObj.test(v)) {
 					hl = q.shift();
 
+
 					for (i = 0; i < v.length; i++) {
-						if (hl === v[i]) {
+						if (hl !== undefined && hl.toLowerCase() === v[i].toLowerCase()) {
+
 							str.push('<b class="vico_b">' + v[i] + '</b>');
 							hl = q.shift();
+
+
 						} else {
 							str.push(v[i]);
 						}
@@ -222,6 +232,11 @@ vico.prototype.autocomplete = function (obj) {
 			obj['source'](query, function (ret) {
 				instance.filterRet = ret;
 			});
+		}
+
+		// if the option has length property
+		if (parseInt(obj['length']) >= 0) {
+			instance.filterRet = instance.filterRet.slice(0, parseInt(obj['length']));
 		}
 	}
 
