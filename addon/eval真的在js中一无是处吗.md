@@ -20,3 +20,69 @@ message({
 ```
 假如我想在有个数组var arr = ['aa', 'bb', 'tt', 'ww', ...]，希望以上述方式阻塞式alert输出，该怎么写？
 <br/>
+首先是想办法得完整的参数形式，我选择尾部递归的方式
+```javascript
+var param;
+param = (function (obj) {
+    var newObj;
+    newObj = {
+        text: arr.pop()
+    }
+
+    if (obj) {
+        
+        newObj['callback'] = function () {
+            Message(obj);  
+        }
+       
+    }
+
+    if (arr.length) {
+        return arguments.callee(newObj);
+    } else {
+        return newObj;
+    }
+
+})();
+```
+这样行行得通吗，可以console.log(param)，结果是多少呢
+```javascript
+{
+    text: 'aa',
+    call: function () {
+        Message(obj);
+    }
+}
+```
+在递归过程中callback的赋值并没有包含之前递归进来的值，只会是普普通通的一个脱离context的语句，怎么办，这个时候eval就派上用场了，如果我们这么写
+```javascript
+var param;
+param = (function (obj) {
+    var newObj, callback;
+    newObj = {
+        text: arr.pop()
+    }
+
+    if (obj) {
+        
+        callback = "function () {" +
+            "Message({" +
+                "text: '" + obj.text + "'" + 
+                (obj.callback ? ("," +"callback:" + obj.callback.toString()) : '') +
+            "});" +
+        "}";
+
+        eval("newObj['callback'] = " + callback);
+       
+    }
+
+    if (arr.length) {
+        return arguments.callee(newObj);
+    } else {
+        return newObj;
+    }
+
+})();
+
+```
+就可以解决上述问题。
